@@ -1,4 +1,4 @@
-import React,{useState,useRef,useEffect} from 'react';
+import React,{useState,useRef} from 'react';
 import { Scrollbars } from 'react-custom-scrollbars';
 import './App.css';
 
@@ -15,7 +15,7 @@ const App = () => {
   const [name,setName] = useState('')
 
   const connect = () =>{
-    socket.current = new WebSocket('ws://localhost:8080')
+    socket.current = new WebSocket('ws://chat-app-kirill.herokuapp.com/')
     
       socket.current.onopen = () => {
           setConnected(true)
