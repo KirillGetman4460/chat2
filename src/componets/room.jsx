@@ -20,7 +20,7 @@ const Room = () => {
     socket.on('GET:MESSAGE', data => setMessages(data));
   }
   useEffect(async()=>{
-    await axios.get(`http://localhost:8080/rooms/${idRoom}`)
+    await axios.get(`https://kirill-chat-app.herokuapp.com/rooms/${idRoom}`)
       .then(res => setMessages(res.data.messages))
     socket.on('GET:MESSAGE', data => setMessages(data));
   },[])

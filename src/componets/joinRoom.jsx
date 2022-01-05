@@ -12,7 +12,7 @@ const JoinRoom = () => {
     const connect = async(idRoom,userName) =>{
         try {
             if(idRoom && userName){
-                await axios.post('http://localhost:8080/rooms',{idRoom,userName})
+                await axios.post('https://kirill-chat-app.herokuapp.com/rooms',{idRoom,userName})
                 socket.emit('ROOM:JOIN', {idRoom,userName});
                 socket.on("ROOM:JOINED",data => dispatch({type:'SET_USERS',payload:data}))
                 dispatch({type:'IS_AUTH',payload:true})
