@@ -1,4 +1,4 @@
-import React from 'react';
+import React,{useEffect} from 'react';
 import axios from 'axios';
 import {useDispatch,useSelector} from 'react-redux'
 import socket from "../socket"
@@ -22,7 +22,9 @@ const JoinRoom = () => {
             console.log(error);
         }      
     }
-
+    useEffect(()=>{
+        console.log(socket);
+    },[])
     return (
         <div className="join-block">
             <input type="text" value={idRoom} onChange={e => dispatch({type:'SET_IDROOM',payload:e.target.value})} placeholder="Room ID"/>
